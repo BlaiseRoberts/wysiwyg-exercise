@@ -1,0 +1,33 @@
+#card-section {
+	display: flex;
+}
+
+.card {
+	display: block;
+	border: 2px solid black;
+	width: 30%;
+	padding: 1em;
+	margin: 1em 2.5% 1em 2.5%;
+}
+.card-header {
+	font-family: didot;	
+	font-weight: bold;
+	font-size: 2em;
+	text-align: left;
+}
+.card-bio {
+	font-family: futura;
+	font-size: 1em;
+	text-align: justify;
+}
+.card-lifespan {
+	font-family: futura;
+	font-size: .75em;
+	text-align: right;
+}
+person:nth-child(even) {
+	background-color: lightyellow;
+}
+person:nth-child(odd) {
+	background-color: lightblue;
+}
