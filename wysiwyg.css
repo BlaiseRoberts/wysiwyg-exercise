@@ -25,6 +25,9 @@
 	font-size: .75em;
 	text-align: right;
 }
+.dotted {
+	border-style: dotted
+}
 person:nth-child(even) {
 	background-color: lightyellow;
 }
