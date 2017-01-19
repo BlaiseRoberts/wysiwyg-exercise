@@ -56,16 +56,24 @@ for (var i = 0; i < people.length; i++) {
 var input = document.getElementById("input");
 
 function handleBorder (event) {
+	//Removes classes from previous cards
+	for (var i = 0; i < personCard.length; i++) {
+		personCard[i].classList.remove("dotted");
+	}
+	//resets input value
+	input.value = "";
+	//toggels class
 	this.classList.toggle("dotted");
 	input.focus();
+	//runs function to mirror text
 	textMirror(this);
 }
 
 function textMirror (personCard) {
 	input.addEventListener("keyup", function (event) {
-		var inputText = document.getElementById("input").value
+		var inputText = document.getElementById("input").value;
 		if (personCard.classList.contains("dotted")) {
-			personCard.childNodes[1].innerHTML = inputText
+			personCard.childNodes[1].innerHTML = inputText;
 		}
 	})
 }
@@ -74,14 +82,21 @@ var personCard = document.getElementsByClassName("card")
 
 for (var i = 0; i < personCard.length; i++) {
 	personCard.item(i).addEventListener("click", handleBorder);
+
 }
 
-// input.addEventListener("keyup", function (event) {
-// 	  var inputText = input.value
-// 	  console.log(inputText)
-// 	  cardBio = inputText;
+//enter key does the same as the click event
+input.onkeypress=function(e){
+    if(e.keyCode==13){
+        e.preventDefault();
+        //removes classes to save edits to card
+        for (var i = 0; i < personCard.length; i++) {
+		personCard[i].classList.remove("dotted");
+	}
+        input.value = "";
+    }
+}
 
-// 	});
 
 
 
