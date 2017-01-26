@@ -1,3 +1,7 @@
+
+
+///People Objects
+
 var people = [
 	{title: "Samurai",
 	  name: "Tomoe Gozen",
@@ -38,6 +42,8 @@ var people = [
 ]
 
 
+/// Printing people objects into cards
+
 for (var i = 0; i < people.length; i++) {
 	var title = people[i].title
 	var name = people[i].name
@@ -53,8 +59,22 @@ for (var i = 0; i < people.length; i++) {
 }
 
 
-var input = document.getElementById("input");
 
+
+
+///Grabbing elements and assigning eventlisteners
+var personCard = document.getElementsByClassName("card")
+
+for (var i = 0; i < personCard.length; i++) {
+	personCard.item(i).addEventListener("click", handleBorder);
+
+}
+
+
+
+
+
+/// Click Event 
 function handleBorder (event) {
 	//Removes classes from previous cards
 	for (var i = 0; i < personCard.length; i++) {
@@ -69,6 +89,10 @@ function handleBorder (event) {
 	textMirror(this);
 }
 
+
+/// Mirroring text
+var input = document.getElementById("input");
+
 function textMirror (personCard) {
 	input.addEventListener("keyup", function (event) {
 		var inputText = document.getElementById("input").value;
@@ -78,12 +102,9 @@ function textMirror (personCard) {
 	})
 }
 
-var personCard = document.getElementsByClassName("card")
 
-for (var i = 0; i < personCard.length; i++) {
-	personCard.item(i).addEventListener("click", handleBorder);
 
-}
+
 
 //enter key does the same as the click event
 input.onkeypress=function(e){
